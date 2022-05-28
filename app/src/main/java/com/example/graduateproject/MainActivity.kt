@@ -112,7 +112,6 @@ class MainActivity : AppCompatActivity() {
     private val MAINTAIN_ASPECT = false
     private val sensorOrientation = 90
 
-
     private val TF_OD_API_IS_QUANTIZED = false
 
     //나중에 모델 더 좋게 학습하면 모델이름을 바꾸거나 업데이트하겠죠.
@@ -173,7 +172,7 @@ class MainActivity : AppCompatActivity() {
             val location: RectF? = result.location
             if (location != null && result.confidence!! >= MINIMUM_CONFIDENCE_TF_OD_API) {
                 //여기있는 location이 옷이 있는 좌표입니다. 그것을 활용해서 옷의 위치를 추출해주시면 될 것 같습니다
-                // 옷만을 추출하기 위해선 opencv를 import 해야하는데, 주말까지 보충하겠습니다.
+
                 Log.i("results",location.toShortString())
                 canvas.drawRect(location, paint)
             }
